@@ -7,10 +7,18 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [cards, setCards] = useState([]);
+  const [clickedIds, setClickedIds] = useState([]);
 
-  const handleClick = () => {
-    setScore(score + 1);
-    shuffleCards(cards);
+  const handleClick = (card) => {
+    if (!clickedIds.includes(card.id)) {
+      setScore(score => score + 1);
+      shuffleCards(cards);
+      setClickedIds([...clickedIds, card.id])
+    } else {
+      if(score > bestScore) setBestScore(score);
+      setScore(0);
+      setClickedIds([]);
+    }
   };
 
   const shuffleCards = (arr) => {
@@ -41,7 +49,6 @@ function App() {
           return Promise.all(pokemonPromises);
         })
         .then((pokemonDetails) => {
-          console.log(pokemonDetails);
           if (!ignore) setCards(pokemonDetails);
         })
         .catch((error) => console.log(error));
@@ -64,7 +71,7 @@ function App() {
               key={card.id}
               text={card.name}
               imageUrl={card.imageUrl}
-              onClick={handleClick}
+              onClick={() => handleClick(card)}
             />
           ))}
         </div>
