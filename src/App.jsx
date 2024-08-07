@@ -33,7 +33,7 @@ function App() {
     let ignore = false;
 
     const fetchPokemonData = () => {
-      fetch("https://pokeapi.co/api/v2/pokemon?limit=16")
+      fetch("https://pokeapi.co/api/v2/pokemon?limit=12")
         .then((response) => response.json())
         .then((response) => {
           const pokemonPromises = response.results.map((result) =>
@@ -70,7 +70,7 @@ function App() {
             <Card
               key={card.id}
               text={card.name}
-              imageUrl={card.imageUrl}
+              imgUrl={card.imageUrl}
               onClick={() => handleClick(card)}
             />
           ))}
