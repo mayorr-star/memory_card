@@ -1,5 +1,77 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "glaze";
+  src: url(../assets/fonts/KalniaGlaze-Bold.ttf);
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(../assets/fonts/RobotoSlab-Medium.ttf);
+}
+
+:root {
+  font-size: 16px;
+  --bg-color: #2d4059;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  font-family: "roboto", "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header strong,
+header p {
+  font-size: 1.2rem;
+}
+
+#root {
+  color: snow;
+  background-color: var(--bg-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 30px;
+}
+
+main {
+  padding: 25px;
+}
+
+.card {
+  border-radius: 7px;
+  border: none;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "glaze", "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+button.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.card img{
+  width: 40%;
+  height: auto;
+}
+
+@media (max-width:350px) {
+  h1{
+    font-size: 2rem;
+  }
 }
