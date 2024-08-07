@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 export default function Card({ text, imgUrl, onClick, alt = text }) {
   return (
-    <button onClick={onClick}>
-      <img src={imgUrl} alt={alt} />
+    <button onClick={onClick} className="card">
+      <img src={imgUrl} alt={`${alt} pokemon`} />
       {text}
     </button>
   );
