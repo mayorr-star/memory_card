@@ -12,7 +12,7 @@
 
 ### Links
 
-- [Live Site](https://memory-card-mn0alu50z-mayorr-stars-projects.vercel.app)
+- [Live Site](https://memory-card-phi-two.vercel.app/)
 
 ## My Process
 
